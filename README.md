@@ -11,6 +11,25 @@ It is designed to help analysts load Windows `.evtx` artefacts, run rule-based d
 ## Screenshots
 
 ### Dashboard
+![Jigsaw Dashboard](assets/dashboard.png)
+
+### Detections
+![Jigsaw Detections](assets/detections.png)
+
+### All Events
+![Jigsaw All Events](assets/events.png)
+
+### Jigsaw Rules
+![Jigsaw Rules](assets/rules.png)
+
+### Timeline
+![Jigsaw Timeline](assets/timeline.png)
+
+### Analysis Results
+![Jigsaw Analysis Results](assets/analysis.png)
+
+### Correlation
+![Jigsaw Correlation](assets/correlation.png)### Dashboard
 ![Jigsaw Dashboard](assets/JIGSAW_1.png)
 
 ### Detections
@@ -282,4 +301,5 @@ Add your chosen license here, for example:
 - Apache-2.0
 - GPL-3.0
 - Custom/private license
+
 
