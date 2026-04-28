@@ -1,0 +1,74 @@
+# Jigsaw Detection Rules — YAML format
+# These extend the built-in rules in jigsaw.py
+# Author: Kennedy Aikohi
+
+rules:
+  - id: JIG-EXT-001
+    name: "Suspicious DLL Loaded by MSIEXEC from Temp"
+    description: "msiexec.exe loading a DLL from %TEMP% — common DLL hijack via MSI"
+    severity: HIGH
+    category: DLL Hijacking
+    mitre: T1574.001
+    event_ids: [7]
+    conditions:
+      Image|endswith: "msiexec.exe"
+      ImageLoaded|contains:
+        - "\\Temp\\"
+        - "\\AppData\\"
+
+  - id: JIG-EXT-002
+    name: "RunDLL32 Loading DLL from User Directory"
+    description: "rundll32.exe executing a DLL from a user-writable path"
+    severity: HIGH
+    category: DLL Hijacking / Execution
+    mitre: T1218.011
+    event_ids: [1, 4688]
+    conditions:
+      Image|endswith: "rundll32.exe"
+      CommandLine|contains:
+        - "\\Users\\"
+        - "\\Temp\\"
+        - "\\AppData\\"
+
+  - id: JIG-EXT-003
+    name: "CertUtil Used for Download"
+    description: "certutil.exe used with -urlcache or -decode — common LOLBin abuse"
+    severity: HIGH
+    category: LOLBin / Download
+    mitre: T1105
+    event_ids: [1, 4688]
+    conditions:
+      Image|endswith: "certutil.exe"
+      CommandLine|contains:
+        - "-urlcache"
+        - "-decode"
+        - "http"
+
+  - id: JIG-EXT-004
+    name: "WMIC Spawning Child Process"
+    description: "wmic.exe used to execute commands — common lateral movement technique"
+    severity: MEDIUM
+    category: Execution / Lateral Movement
+    mitre: T1047
+    event_ids: [1, 4688]
+    conditions:
+      ParentImage|endswith: "wmic.exe"
+
+  - id: JIG-EXT-005
+    name: "Suspicious Network Connection — Tor Exit / Known C2 Port"
+    description: "Outbound connection on Tor-associated or uncommon C2 ports"
+    severity: HIGH
+    category: C2 / Network
+    mitre: T1090.003
+    event_ids: [3]
+    conditions:
+      DestinationPort:
+        - 9001
+        - 9030
+        - 9050
+        - 9051
+        - 4444
+        - 4445
+        - 31337
+        - 1337
+        - 8888

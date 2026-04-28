@@ -1,0 +1,105 @@
+# Jigsaw Event Log Field Mappings
+# Maps logical field names to Windows EVTX data field names
+# Mirrors the Jigsaw sigma-event-logs-all.yml approach
+# Author: Kennedy Aikohi
+
+title: Jigsaw Windows Event Log Mappings
+version: "1.0"
+
+mappings:
+  # Sysmon EID 1 — Process Create
+  process_creation:
+    event_ids: [1]
+    channel: Microsoft-Windows-Sysmon/Operational
+    fields:
+      Image:            Image
+      CommandLine:      CommandLine
+      ParentImage:      ParentImage
+      ParentCommandLine: ParentCommandLine
+      User:             User
+      ProcessGuid:      ProcessGuid
+      ProcessId:        ProcessId
+      ParentProcessGuid: ParentProcessGuid
+      Hashes:           Hashes
+      CurrentDirectory: CurrentDirectory
+      IntegrityLevel:   IntegrityLevel
+
+  # Sysmon EID 3 — Network Connection
+  network_connection:
+    event_ids: [3]
+    channel: Microsoft-Windows-Sysmon/Operational
+    fields:
+      Image:            Image
+      User:             User
+      Protocol:         Protocol
+      SourceIp:         SourceIp
+      SourcePort:       SourcePort
+      DestinationIp:    DestinationIp
+      DestinationPort:  DestinationPort
+      DestinationHostname: DestinationHostname
+      ProcessGuid:      ProcessGuid
+
+  # Sysmon EID 7 — Image Loaded (DLL)
+  image_load:
+    event_ids: [7]
+    channel: Microsoft-Windows-Sysmon/Operational
+    fields:
+      Image:            Image
+      ImageLoaded:      ImageLoaded
+      Signed:           Signed
+      Signature:        Signature
+      SignatureStatus:  SignatureStatus
+      Hashes:           Hashes
+      ProcessGuid:      ProcessGuid
+
+  # Sysmon EID 10 — ProcessAccess
+  process_access:
+    event_ids: [10]
+    channel: Microsoft-Windows-Sysmon/Operational
+    fields:
+      SourceImage:      SourceImage
+      TargetImage:      TargetImage
+      GrantedAccess:    GrantedAccess
+      CallTrace:        CallTrace
+
+  # Security EID 4688 — Process Create (Security log)
+  security_process_creation:
+    event_ids: [4688]
+    channel: Security
+    fields:
+      NewProcessName:       NewProcessName
+      ProcessCommandLine:   ProcessCommandLine
+      SubjectUserName:      SubjectUserName
+      ParentProcessName:    ParentProcessName
+      NewProcessId:         NewProcessId
+      TokenElevationType:   TokenElevationType
+
+  # Security EID 4624/4625 — Logon
+  logon:
+    event_ids: [4624, 4625]
+    channel: Security
+    fields:
+      TargetUserName:   TargetUserName
+      WorkstationName:  WorkstationName
+      IpAddress:        IpAddress
+      LogonType:        LogonType
+      AuthenticationPackageName: AuthenticationPackageName
+
+  # System EID 7045 — Service Install
+  service_install:
+    event_ids: [7045]
+    channel: System
+    fields:
+      ServiceName:  param1
+      ImagePath:    param2
+      ServiceType:  param3
+      StartType:    param4
+      AccountName:  param5
+
+  # PowerShell EID 4104 — Script Block
+  powershell_script:
+    event_ids: [4104]
+    channel: Microsoft-Windows-PowerShell/Operational
+    fields:
+      ScriptBlockText:  ScriptBlockText
+      Path:             Path

@@ -1,0 +1,23 @@
+title: Suspicious Active Directory Object Change
+author: Jigsaw
+id: SIG-JIG-AD-CHANGE-001
+status: experimental
+description: Detects selected AD object change events commonly used during persistence or privilege escalation.
+level: high
+tags:
+  - attack.t1098
+  - attack.t1136
+detection:
+  selection:
+    EventID:
+      - 5136
+      - 5137
+      - 5141
+      - 4720
+      - 4722
+    Message|contains:
+      - adminCount
+      - servicePrincipalName
+      - userAccountControl
+      - msDS-AllowedToDelegateTo
+  condition: selection

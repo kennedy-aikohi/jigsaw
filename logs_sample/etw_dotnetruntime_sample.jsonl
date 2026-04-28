@@ -1,0 +1,1 @@
+{"ProviderName":"Microsoft-Windows-DotNETRuntime","EventName":"AssemblyLoad","TimeCreated":"2026-04-27T12:03:00Z","Payload":{"ProcessName":"C:\\Windows\\Temp\\Seatbelt.exe","AssemblyName":"Seatbelt, Version=1.2.1.0","MethodName":"Seatbelt.Program.TokenPrivileges"},"Computer":"DC01"}

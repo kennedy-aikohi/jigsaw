@@ -1,0 +1,23 @@
+title: Suspicious Windows LOLBIN Process Execution
+id: CHAIN-JIG-LOLBIN-001
+status: experimental
+description: Jigsaw/Sigma-style rule for common LOLBIN execution from Windows event logs.
+level: high
+tags:
+  - attack.t1218
+  - attack.t1059
+logsource:
+  product: windows
+detection:
+  selection:
+    EventID:
+      - 4688
+      - 1
+    CommandLine|contains:
+      - rundll32
+      - regsvr32
+      - mshta
+      - certutil
+      - bitsadmin
+      - powershell
+  condition: selection

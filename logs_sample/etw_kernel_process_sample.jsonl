@@ -1,0 +1,1 @@
+{"ProviderName":"Microsoft-Windows-Kernel-Process","EventName":"ProcessStart","TimeCreated":"2026-04-27T12:00:00Z","Payload":{"ImageName":"C:\\Windows\\System32\\cmd.exe","ParentImageName":"C:\\Windows\\System32\\spoolsv.exe","CreatorProcessName":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"cmd.exe /c whoami"},"Computer":"DC01"}

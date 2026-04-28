@@ -1,0 +1,29 @@
+[[rules]]
+id = "HAY-JIG-AD-PRIVGROUP"
+title = "Privileged Group Membership Change"
+level = "critical"
+event_ids = [4728, 4732, 4756]
+keywords = ["Domain Admins", "Enterprise Admins", "Administrators", "DnsAdmins"]
+category = "Privilege Escalation"
+mitre = "attack.t1098"
+description = "Jigsaw TOML-style TOML rule for privileged group membership changes."
+
+[[rules]]
+id = "HAY-JIG-KERBEROAST-RC4"
+title = "Kerberoasting Candidate RC4 Ticket"
+level = "high"
+event_ids = [4769]
+keywords = ["0x17", "RC4", "TicketEncryptionType=0x17"]
+category = "Credential Access"
+mitre = "attack.t1558.003"
+description = "Jigsaw TOML-style TOML rule for RC4 Kerberos service tickets."
+
+[[rules]]
+id = "HAY-JIG-PS-SUSPICIOUS"
+title = "Suspicious PowerShell Script Block"
+level = "high"
+event_ids = [4103, 4104]
+keywords = ["EncodedCommand", "FromBase64String", "DownloadString", "Invoke-Mimikatz", "IEX"]
+category = "Execution"
+mitre = "attack.t1059.001"
+description = "Jigsaw TOML-style TOML rule for suspicious PowerShell content."
