@@ -1,4 +1,4 @@
-# Jigsaw XDR+ OmniParser
+﻿# Jigsaw XDR+ OmniParser
 
 **Jigsaw XDR+ OmniParser** is a Windows EVTX investigation, detection, timeline, and correlation GUI built for defensive security analysis, DFIR triage, lab analysis, and Windows event-log hunting.
 
@@ -11,47 +11,25 @@ It is designed to help analysts load Windows `.evtx` artefacts, run rule-based d
 ## Screenshots
 
 ### Dashboard
-![Jigsaw Dashboard](assets/dashboard.png)
+<p align="center"><img src="assets/dashboard.png" width="900" alt="Jigsaw Dashboard"></p>
 
 ### Detections
-![Jigsaw Detections](assets/detections.png)
+<p align="center"><img src="assets/detections.png" width="900" alt="Jigsaw Detections"></p>
 
 ### All Events
-![Jigsaw All Events](assets/events.png)
+<p align="center"><img src="assets/events.png" width="900" alt="Jigsaw All Events"></p>
 
 ### Jigsaw Rules
-![Jigsaw Rules](assets/rules.png)
+<p align="center"><img src="assets/rules.png" width="900" alt="Jigsaw Rules"></p>
 
 ### Timeline
-![Jigsaw Timeline](assets/timeline.png)
+<p align="center"><img src="assets/timeline.png" width="900" alt="Jigsaw Timeline"></p>
 
 ### Analysis Results
-![Jigsaw Analysis Results](assets/analysis.png)
+<p align="center"><img src="assets/analysis.png" width="900" alt="Jigsaw Analysis Results"></p>
 
 ### Correlation
-![Jigsaw Correlation](assets/correlation.png)### Dashboard
-![Jigsaw Dashboard](assets/JIGSAW_1.png)
-
-### Detections
-![Jigsaw Detections](assets/JIGSAW_2.png)
-
-### All Events
-![Jigsaw All Events](assets/JIGSAW_3.png)
-
-### Jigsaw Rules
-![Jigsaw Rules](assets/JIGSAW_4.png)
-
-### Timeline
-![Jigsaw Timeline](assets/JIGSAW_5.png)
-
-### Analysis Results
-![Jigsaw Analysis Results](assets/JIGSAW_6.png)
-
-### Correlation
-![Jigsaw Correlation](assets/JIGSAW_7.png)
-
----
-
+<p align="center"><img src="assets/correlation.png" width="900" alt="Jigsaw Correlation"></p>
 ## Key Features
 
 - Windows EVTX parsing and investigation workflow
@@ -157,8 +135,8 @@ Move to the **Timeline** tab to understand event order.
 ### 5. Use correlation
 Move to the **Correlation** tab to identify entity relationships such as:
 
-- User ↔ Host
-- IP ↔ Host
+- User â†” Host
+- IP â†” Host
 - Process activity
 - Repeated users or service accounts
 
@@ -301,5 +279,6 @@ Add your chosen license here, for example:
 - Apache-2.0
 - GPL-3.0
 - Custom/private license
+
 
 
