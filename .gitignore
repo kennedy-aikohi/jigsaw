@@ -1,0 +1,15 @@
+﻿# Build artifacts
+build/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# PyInstaller
+*.spec
+
+# Logs / temp
+*.log
+*.tmp
+*.txt
